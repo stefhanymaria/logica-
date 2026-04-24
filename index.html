@@ -3,50 +3,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Armed Detective Agency | BSD Fan Site</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Bungo Stray Dogs | Enciclopédia de Personagens</title>
+    <style>
+        :root {
+            --gold: #d4af37;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text: #e0e0e0;
+            --accent-blue: #2c3e50;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark-bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                        url('https://images8.alphacoders.com/717/717870.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 5px solid var(--gold);
+        }
+
+        header h1 {
+            font-size: 4rem;
+            margin: 0;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: #fff;
+            text-shadow: 3px 3px 15px rgba(0,0,0,1);
+        }
+
+        /* Navegação */
+        nav {
+            background: #000;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+        }
+
+        nav a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: #fff; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--gold);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* Tabelas de Personagens */
+        .faction-box {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .faction-title {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .faction-title::before {
+            content: '⬥';
+            margin-right: 15px;
+            color: var(--gold);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: rgba(255,255,255,0.02);
+        }
+
+        th {
+            background: #222;
+            color: var(--gold);
+            text-align: left;
+            padding: 15px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #333;
+            font-size: 1rem;
+        }
+
+        tr:hover { background: rgba(212, 175, 55, 0.05); }
+
+        .ability-name { color: #5dade2; font-style: italic; }
+        .author-ref { color: #999; font-size: 0.9rem; }
+
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 40px;
+            color: #555;
+            font-size: 0.8rem;
+            border-top: 1px solid #222;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            table { font-size: 0.8rem; }
+            nav a { display: block; margin: 10px 0; }
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <div class="logo">Bungou Stray Dogs</div>
-            <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Personagens</a></li>
-                <li><a href="#">Habilidades</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <h1>Bungo Stray Dogs</h1>
+    <p>Onde a Literatura se torna Habilidade Sobrenatural</p>
+</header>
 
-    <main>
-        <section class="hero">
-            <h1>Agência de Detetives Armados</h1>
-            <p>Onde o sobrenatural encontra a justiça no submundo de Yokohama.</p>
-        </section>
+<nav>
+    <a href="#ada">Agência de Detetives</a>
+    <a href="#portmafia">Máfia do Porto</a>
+    <a href="#guild">The Guild</a>
+    <a href="#rats">Ratos & Decadência</a>
+    <a href="#hunting">Cães de Caça</a>
+</nav>
 
-        <section class="characters">
-            <h2>Personagens Principais</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Atsushi Nakajima</h3>
-                    <p>Habilidade: Besta Sob a Luz do Luar</p>
-                </div>
-                <div class="card">
-                    <h3>Osamu Dazai</h3>
-                    <p>Habilidade: Não Mais Humano</p>
-                </div>
-                <div class="card">
-                    <h3>Doppo Kunikida</h3>
-                    <p>Habilidade: Poeta Solitário</p>
-                </div>
-            </div>
-        </section>
-    </main>
+<div class="container">
 
-    <footer>
-        <p>&copy; 2026 - Fan Site de Bungou Stray Dogs</p>
-    </footer>
+    <section id="ada">
+        <div class="faction-box">
+            <h3 class="faction-title">Agência de Detetives Armados (ADA)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Habilidade Especial</th>
+                        <th>Referência Literária</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>Atsushi Nakajima</b></td><td class="ability-name">Besta Sob a Lua Cheia</td><td class="author-ref">Atsushi Nakajima (Sangetsuki)</td></tr>
+                    <tr><td><b>Osamu Dazai</b></td><td class="ability-name">Não Mais Humano</td><td class="author-ref">Osamu Dazai (Ningen Shikkaku)</td></tr>
+                    <tr><td><b>Doppo Kunikida</b></td><td class="ability-name">Poeta Solitário</td><td class="author-ref">Doppo Kunikida</td></tr>
+                    <tr><td><b>Ranpo Edogawa</b></td><td class="ability-name">Super Dedução (Intelecto)</td><td class="author-ref">Edogawa Rampo</td></tr>
+                    <tr><td><b>Akiko Yosano</b></td><td class="ability-name">Não Deves Morrer</td><td class="author-ref">Akiko Yosano</td></tr>
+                    <tr><td><b>Jun'ichirō Tanizaki</b></td><td class="ability-name">Neve Leve</td><td class="author-ref">Jun'ichirō Tanizaki</td></tr>
+                    <tr><td><b>Kenji Miyazawa</b></td><td class="ability-name">Indomável pela Chuva</td><td class="author-ref">Kenji Miyazawa</td></tr>
+                    <tr><td><b>Kyōka Izumi</b></td><td class="ability-name">Demônio de Neve</td><td class="author-ref">Kyōka Izumi</td></tr>
+                    <tr><td><b>Yukichi Fukuzawa</b></td><td class="ability-name">Todos os Homens São Iguais</td><td class="author-ref">Yukichi Fukuzawa</td></tr>
+                    <tr><td><b>Katai Tayama</b></td><td class="ability-name">Futon</td><td class="author-ref">Katai Tayama</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="portmafia">
+        <div class="faction-box">
+            <h3 class="faction-title">Máfia do Porto</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Habilidade Especial</th>
+                        <th>Referência Literária</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>Ryūnosuke Akutagawa</b></td><td class="ability-name">Rashomon</td><td class="author-ref">Ryūnosuke Akutagawa</td></tr>
+                    <tr><td><b>Chūya Nakahara</b></td><td class="ability-name">Pela Tristeza Maculada</td><td class="author-ref">Chūya Nakahara</td></tr>
+                    <tr><td><b>Ōgai Mori</b></td><td class="ability-name">Vita Sexualis / Elise</td><td class="author-ref">Mori Ōgai</td></tr>
+                    <tr><td><b>Kōyō Ozaki</b></td><td class="ability-name">Demônio Dourado</td><td class="author-ref">Kōyō Ozaki</td></tr>
+                    <tr><td><b>Ichiyō Higuchi</b></td><td class="ability-name">(Sem habilidade/Armas)</td><td class="author-ref">Ichiyō Higuchi</td></tr>
+                    <tr><td><b>Ryūrō Hirotsu</b></td><td class="ability-name">Camélia Cadente</td><td class="author-ref">Ryūrō Hirotsu</td></tr>
+                    <tr><td><b>Michizō Tachihara</b></td><td class="ability-name">Memento de Inverno</td><td class="author-ref">Michizō Tachihara</td></tr>
+                    <tr><td><b>Motojirō Kajii</b></td><td class="ability-name">Limão Bomba</td><td class="author-ref">Motojirō Kajii</td></tr>
+                    <tr><td><b>Q (Kyūsaku Yumeno)</b></td><td class="ability-name">Dogra Magra</td><td class="author-ref">Kyūsaku Yumeno</td></tr>
+                    <tr><td><b>Gin Akutagawa</b></td><td class="ability-name">(Assassina/Adagas)</td><td class="author-ref">Akutagawa (Personagem Gin)</td></tr>
+                    <tr><td><b>Oda Sakunosuke</b></td><td class="ability-name">Impecável</td><td class="author-ref">Sakunosuke Oda</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="guild">
+        <div class="faction-box">
+            <h3 class="faction-title">The Guild (EUA)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Habilidade Especial</th>
+                        <th>Referência Literária</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>F. Scott Fitzgerald</b></td><td class="ability-name">O Grande Fitzgerald</td><td class="author-ref">O Grande Gatsby</td></tr>
+                    <tr><td><b>Lucy Maud Montgomery</b></td><td class="ability-name">Anne de Abyssal Red</td><td class="author-ref">Anne de Green Gables</td></tr>
+                    <tr><td><b>Margaret Mitchell</b></td><td class="ability-name">E o Vento Levou</td><td class="author-ref">Gone with the Wind</td></tr>
+                    <tr><td><b>Nathaniel Hawthorne</b></td><td class="ability-name">A Letra Escarlate</td><td class="author-ref">The Scarlet Letter</td></tr>
+                    <tr><td><b>John Steinbeck</b></td><td class="ability-name">As Vinhas da Ira</td><td class="author-ref">The Grapes of Wrath</td></tr>
+                    <tr><td><b>H.P. Lovecraft</b></td><td class="ability-name">Grandes Antigos</td><td class="author-ref">Cthulhu Mythos</td></tr>
+                    <tr><td><b>Edgar Allan Poe</b></td><td class="ability-name">Gato Preto na Rua Morgue</td><td class="author-ref">The Black Cat</td></tr>
+                    <tr><td><b>Louisa May Alcott</b></td><td class="ability-name">Mulherzinhas</td><td class="author-ref">Little Women</td></tr>
+                    <tr><td><b>Mark Twain</b></td><td class="ability-name">Huck Finn & Tom Sawyer</td><td class="author-ref">Huckleberry Finn</td></tr>
+                    <tr><td><b>Herman Melville</b></td><td class="ability-name">Moby Dick</td><td class="author-ref">Moby Dick</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="rats">
+        <div class="faction-box">
+            <h3 class="faction-title">Ratos & Decadência dos Anjos</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Habilidade Especial</th>
+                        <th>Referência Literária</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>Fyodor Dostoevsky</b></td><td class="ability-name">Crime e Castigo</td><td class="author-ref">Fiódor Dostoiévski</td></tr>
+                    <tr><td><b>Nikolai Gogol</b></td><td class="ability-name">O Capote</td><td class="author-ref">Nikolai Gogol</td></tr>
+                    <tr><td><b>Sigma</b></td><td class="ability-name">Troca de Informações</td><td class="author-ref">(Personagem Original)</td></tr>
+                    <tr><td><b>Bram Stoker</b></td><td class="ability-name">Vampirismo / Conde</td><td class="author-ref">Bram Stoker (Drácula)</td></tr>
+                    <tr><td><b>Mushitarō Oguri</b></td><td class="ability-name">O Crime Perfeito</td><td class="author-ref">Mushitarō Oguri</td></tr>
+                    <tr><td><b>Ivan Goncharov</b></td><td class="ability-name">O Precipício</td><td class="author-ref">Ivan Goncharov</td></tr>
+                    <tr><td><b>Alexander Pushkin</b></td><td class="ability-name">Banquete em Tempos de Peste</td><td class="author-ref">Alexander Pushkin</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="hunting">
+        <div class="faction-box">
+            <h3 class="faction-title">Cães de Caça (Hunting Dogs)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Habilidade Especial</th>
+                        <th>Referência Literária</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>Ōchi Fukuchi</b></td><td class="ability-name">Leão de Espelho</td><td class="author-ref">Ōchi Fukuchi</td></tr>
+                    <tr><td><b>Saigiku Jōno</b></td><td class="ability-name">Lágrimas Inestimáveis</td><td class="author-ref">Saigiku Jōno</td></tr>
+                    <tr><td><b>Tetchō Suehiro</b></td><td class="ability-name">Flores de Ameixeira na Neve</td><td class="author-ref">Tetchō Suehiro</td></tr>
+                    <tr><td><b>Teruko Ōkura</b></td><td class="ability-name">Suspiro da Alma</td><td class="author-ref">Teruko Ōkura</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p>Bungo Stray Dogs Wiki Fan Page - 2024</p>
+    <p>Inspirado na obra de Kafka Asagiri e Sango Harukawa.</p>
+</footer>
 
 </body>
 </html>
